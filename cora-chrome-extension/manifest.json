@@ -1,0 +1,48 @@
+{
+  "manifest_version": 3,
+  "name": "CoraAi Extension",
+  "version": "0.0.1",
+  "description": "A Chrome extension to fetch data from EHR",
+  "icons": {
+    "16": "asset/images/coraAIicon.png",
+    "32": "asset/images/coraAIicon.png",
+    "48": "asset/images/coraAIicon.png",
+    "128": "asset/images/coraAIicon.png"
+  },
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "action": {
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": [
+    "storage",
+    "activeTab",
+    "notifications",
+    "scripting",
+    "windows",
+    "webRequest",
+    "sidePanel"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "all_frames": true
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["public/*"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

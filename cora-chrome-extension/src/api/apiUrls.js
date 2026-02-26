@@ -1,0 +1,5 @@
+export const VITE_AUTH_API_BASE_URL='https://api.auth.heycora.ai/api/v1'
+export const VITE_ADMIN_API_BASE_URL='https://api.admin.heycora.ai/api/v1'
+export const VITE_RISK_API_BASE_URL='https://devapi.heycora.ai/api/v1'
+export const VITE_CONFIGURATOR_BASE_URL='https://api.configurator.heycora.ai/api/v1'
+export const VITE_API_BASE_URL='http://3.16.246.83:8092/api/v1'
